@@ -19,18 +19,15 @@ end
 
  
   #now we're starting to iterate through the hash and if the current min_val is nil then we've just started iterating. So then we make the current min_val equal to value (the val iteration we're on, and take the assoc'd key)
-    if current_minimum_val == nil 
-      current_minimum_val = value 
-      current_key_assoc_w_min_val = key 
+    if min_val == nil 
+      min_val = value 
+      min_key = key 
     else 
-    #we keep iterating and if the current min val
-    #i greater than our old value we replace it
-    #with the new lower value and return the assoc'd
-    #key. 
-      if current_minimum_val > value 
-        current_minimum_val = value
-        current_key_assoc_w_min_val = key 
+    #we keep iterating and if the current min val is greater than our old value we replace it with the new lower value and return the assoc'd key. 
+      if min_val > value 
+        min_val = value
+        min_key = key 
       end
     end
   end 
-  current_key_assoc_w_min_val 
+  min_key
